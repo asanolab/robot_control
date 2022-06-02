@@ -6,4 +6,5 @@ wstool merge -t . robot_control/open_manipulator/install/open_manipulator.rosins
 wstool update
 
 rosdep install -y -r --from-paths . --ignore-src # execute on src dir
+catkin build
 ```
