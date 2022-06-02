@@ -8,3 +8,14 @@ wstool update
 rosdep install -y -r --from-paths . --ignore-src # execute on src dir
 catkin build
 ```
+
+# Sample
+terminal1
+```
+roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=false usb_port:=/dev/ttyACM0 
+```
+
+terminal2
+```
+./open_manipulator_sample.py
+```
