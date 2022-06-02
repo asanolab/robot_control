@@ -1,0 +1,18 @@
+- git:
+    local-name: open_manipulator
+    uri: https://github.com/ROBOTIS-GIT/open_manipulator.git
+    version: kinetic-devel
+- git:
+    local-name: open_manipulator_msgs
+    uri: https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+    version: kinetic-devel
+- git:
+    local-name: open_manipulator_simulations
+    uri: https://github.com/ROBOTIS-GIT/open_manipulator_simulations.git
+    version: kinetic-devel
+- git:
+    local-name: open_manipulator_controls
+    uri: https://github.com/ROBOTIS-GIT/open_manipulator_controls.git
+- git:
+    local-name: open_manipulator_dependencies
+    uri: https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git
