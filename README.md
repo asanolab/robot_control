@@ -1,6 +1,8 @@
 # robot_control
 
 ## Install
+please install ROS first -> http://wiki.ros.org/melodic/Installation/Ubuntu
+
 ```
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
