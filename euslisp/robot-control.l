@@ -36,7 +36,7 @@
          :thre thre
          :rthre (deg2rad rthre)
          :revert-if-fail rif
-         :debug-view t
+         :debug-view dv
          :stop stop
          )
    (send *irtviewer* :draw-objects)
@@ -46,6 +46,9 @@
   ;;
   (:move
    (send-av time &key (cartesian nil))
+   (when cartesian
+     (setq time (* 10 time))  ;; bug? this is necessary when moving robot with :end-coords-interpolation t
+     )
    (send *ri* :angle-vector send-av time nil 0 :end-coords-interpolation cartesian)
    (send *ri* :wait-interpolation))
   (:move-cartesian
