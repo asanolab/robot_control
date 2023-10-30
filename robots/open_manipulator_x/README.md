@@ -45,3 +45,6 @@ roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=f
 or Rviz gui
 1. move end-effector on Rviz
 2. click 'Plan & Execute' button
+
+![open_manipulator_x_moveit_rviz](https://github.com/yuki-asano/robot_control/assets/6872136/ea43dcf3-9f9c-4a18-8a5b-95b14bb3e293)
+
