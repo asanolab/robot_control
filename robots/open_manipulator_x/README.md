@@ -2,7 +2,7 @@
 
 ```
 cd ~/catkin_ws/src
-wstool merge -t . robot_control/open_manipulator/install/open_manipulator.rosinstall
+wstool merge -t . robot_control/robots/open_manipulator_x/install/open_manipulator_x.rosinstall
 wstool update
 
 rosdep install -y -r --from-paths . --ignore-src # execute on src dir
