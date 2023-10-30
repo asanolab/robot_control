@@ -1,3 +1,9 @@
+# References
+- github
+  - https://github.com/ROBOTIS-GIT/open_manipulator
+- e-Manual
+  - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/      
+
 # Install
 
 ```
