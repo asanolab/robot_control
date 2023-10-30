@@ -17,6 +17,10 @@ roscd open_manipulator_description/urdf
 cp open_manipulator.urdf.xacro open_manipulator_robot.urdf.xacro
 ```
 
+# Connection
+- connect OpenMANIPULATOR-x to OpenCR board via a TTL port
+  - https://emanual.robotis.com/docs/en/parts/controller/opencr10/
+
 # Sample
 terminal1
 ```
