@@ -28,12 +28,18 @@ cp open_manipulator.urdf.xacro open_manipulator_robot.urdf.xacro
   - https://emanual.robotis.com/docs/en/parts/controller/opencr10/
 
 # Sample
-terminal1
+- controller
 ```
+[terminal1]
 roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=false usb_port:=/dev/ttyACM0 
 ```
 
-terminal2
+- motion planning
 ```
+[terminal2]
 ./open_manipulator_x_sample.py
 ```
+
+or Rviz gui
+1. move end-effector on Rviz
+2. click 'Plan & Execute' button
