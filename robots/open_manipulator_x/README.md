@@ -25,5 +25,5 @@ roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=f
 
 terminal2
 ```
-./open_manipulator_sample.py
+./open_manipulator_x_sample.py
 ```
