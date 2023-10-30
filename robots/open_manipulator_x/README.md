@@ -2,7 +2,9 @@
 - github
   - https://github.com/ROBOTIS-GIT/open_manipulator
 - e-Manual
-  - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/      
+  - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/
+- wiki
+  - https://github.com/yuki-asano/robot_control/wiki/open_manipulator_x
 
 # Install
 
