@@ -52,7 +52,8 @@ or Rviz gui
 
 # Simulation
 ## gui & keyboard
-- ref: https://emanual.robotis.com/docs/en/platform/openmanipulator_x/ros_simulation/#operation-in-gazebo
+- ref
+  - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/ros_simulation/
 
 terminal1
 ```
