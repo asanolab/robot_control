@@ -2,18 +2,21 @@
 - github
   - https://github.com/ROBOTIS-GIT/open_manipulator
 - e-Manual
-  - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/
+  - Overview 
+    - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/
+  - Simulation
+    - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/ros_simulation/
 - wiki
   - https://github.com/yuki-asano/robot_control/wiki/open_manipulator_x
 
 # Install
 
 ```bash
-cd ~/catkin_ws/src
-wstool merge -t . robot_control/robots/open_manipulator_x/install/open_manipulator_x.<rosdistro>.rosinstall
+cd ~/catkin_ws/src/robot_control/robots/open_manipulator_x
+wstool merge -t ~/catkin_ws/src install/open_manipulator_x.<rosdistro>.rosinstall
 wstool update
 
-rosdep install -y -r --from-paths . --ignore-src # execute on src dir
+rosdep install -y -r --from-paths . --ignore-src
 catkin build
 ```
 
@@ -25,20 +28,19 @@ roscd open_manipulator_description/urdf
 cp open_manipulator.urdf.xacro open_manipulator_robot.urdf.xacro
 ```
 
-# Connection
+# Real robot
+## Connection
 - connect OpenMANIPULATOR-x to OpenCR board via a TTL port
   - https://emanual.robotis.com/docs/en/parts/controller/opencr10/
 
-# Sample
-- controller
+## moveit sample
+terminal1: controller
 ```
-[terminal1]
 roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=false usb_port:=/dev/ttyACM0 
 ```
 
-- motion planning
+terminal2: motion planning
 ```
-[terminal2]
 ./open_manipulator_x_sample.py
 ```
 
@@ -48,3 +50,41 @@ or Rviz gui
 
 ![open_manipulator_x_moveit_rviz](https://github.com/yuki-asano/robot_control/assets/6872136/ea43dcf3-9f9c-4a18-8a5b-95b14bb3e293)
 
+# Simulation
+## gui & keyboard
+- ref
+  - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/ros_simulation/
+
+terminal1
+```
+roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+```
+
+terminal2
+```
+roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=false
+```
+
+terminal3
+```
+- gui
+roslaunch open_manipulator_control_gui open_manipulator_control_gui.launch
+
+- from keyboarod
+roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch
+```
+
+## moveit sample
+terminal1: gazebo, moveit
+```
+roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=true
+```
+Launch gazebo with open_manipulator_x and click Play button at the bottom of the gazebo window, then rviz(moveit) will be launch.
+
+![open_manipulator_x_gazebo_moveit](https://github.com/yuki-asano/robot_control/assets/6872136/6e74b95e-f828-4c7d-ae18-74f4aa3a7d08)
+
+
+terminal2: motion planning
+```
+./open_manipulator_x_sample.py
+```
