@@ -33,7 +33,7 @@ cp open_manipulator.urdf.xacro open_manipulator_robot.urdf.xacro
 - connect OpenMANIPULATOR-x to OpenCR board via a TTL port
   - https://emanual.robotis.com/docs/en/parts/controller/opencr10/
 
-## Sample
+## moveit sample
 - controller
 ```
 [terminal1]
@@ -53,6 +53,17 @@ or Rviz gui
 ![open_manipulator_x_moveit_rviz](https://github.com/yuki-asano/robot_control/assets/6872136/ea43dcf3-9f9c-4a18-8a5b-95b14bb3e293)
 
 # Simulation
+## moveit sample
+```
+[terminal1]
+roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=true
+```
+```
+[terminal2]
+./open_manipulator_x_sample.py
+```
+
+## other
 ```
 [terminal1]
 roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
