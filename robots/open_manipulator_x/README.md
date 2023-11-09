@@ -34,15 +34,13 @@ cp open_manipulator.urdf.xacro open_manipulator_robot.urdf.xacro
   - https://emanual.robotis.com/docs/en/parts/controller/opencr10/
 
 ## moveit sample
-- controller
+terminal1: controller
 ```
-[terminal1]
 roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=false usb_port:=/dev/ttyACM0 
 ```
 
-- motion planning
+terminal2: motion planning
 ```
-[terminal2]
 ./open_manipulator_x_sample.py
 ```
 
@@ -53,23 +51,36 @@ or Rviz gui
 ![open_manipulator_x_moveit_rviz](https://github.com/yuki-asano/robot_control/assets/6872136/ea43dcf3-9f9c-4a18-8a5b-95b14bb3e293)
 
 # Simulation
-## moveit sample
-```
-[terminal1]
-roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=true
-```
-```
-[terminal2]
-./open_manipulator_x_sample.py
-```
+## gui & keyboard
+- ref: https://emanual.robotis.com/docs/en/platform/openmanipulator_x/ros_simulation/#operation-in-gazebo
 
-## other
+terminal1
 ```
-[terminal1]
 roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
 ```
 
+terminal2
 ```
-[terminal2
 roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=false
 ```
+
+terminal3
+```
+- gui
+roslaunch open_manipulator_control_gui open_manipulator_control_gui.launch
+
+- from keyboarod
+roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch
+```
+
+<!-- under test
+## moveit sample
+terminal1
+```
+roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=true
+```
+terminal2
+```
+./open_manipulator_x_sample.py
+```
+-->
