@@ -8,9 +8,9 @@
 
 # Install
 
-```
+```bash
 cd ~/catkin_ws/src
-wstool merge -t . robot_control/robots/open_manipulator_x/install/open_manipulator_x.rosinstall
+wstool merge -t . robot_control/robots/open_manipulator_x/install/open_manipulator_x.<rosdistro>.rosinstall
 wstool update
 
 rosdep install -y -r --from-paths . --ignore-src # execute on src dir
@@ -20,7 +20,7 @@ catkin build
 ### for kinetic devel  
 In kinetic devel, open_manipulator.urdf.xacro is existing, but open_manipulator_robot.urdf.xacro is not.
   
-```
+```bash
 roscd open_manipulator_description/urdf
 cp open_manipulator.urdf.xacro open_manipulator_robot.urdf.xacro
 ```
