@@ -3,14 +3,6 @@
     uri: https://github.com/ROBOTIS-GIT/open_manipulator.git
     version: noetic-devel
 - git:
-    local-name: open_manipulator_msgs
-    uri: https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
-    version: noetic-devel
-- git:
-    local-name: open_manipulator_simulations
-    uri: https://github.com/ROBOTIS-GIT/open_manipulator_simulations.git
-    version: noetic-devel
-- git:
     local-name: open_manipulator_controls
     uri: https://github.com/ROBOTIS-GIT/open_manipulator_controls.git
 - git:
