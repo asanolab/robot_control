@@ -75,7 +75,7 @@ roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch
 ```
 
 ## moveit sample
-terminal1
+terminal1: gazebo, moveit
 ```
 roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=true
 ```
@@ -84,7 +84,7 @@ Launch gazebo with open_manipulator_x and click Play button at the bottom of the
 ![open_manipulator_x_gazebo_moveit](https://github.com/yuki-asano/robot_control/assets/6872136/6e74b95e-f828-4c7d-ae18-74f4aa3a7d08)
 
 
-terminal2
+terminal2: motion planning
 ```
 ./open_manipulator_x_sample.py
 ```
