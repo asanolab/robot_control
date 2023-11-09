@@ -16,7 +16,7 @@ cd ~/catkin_ws/src/robot_control/robots/open_manipulator_x
 wstool merge -t ~/catkin_ws/src install/open_manipulator_x.<rosdistro>.rosinstall
 wstool update
 
-rosdep install -y -r --from-paths . --ignore-src # execute on src dir
+rosdep install -y -r --from-paths . --ignore-src
 catkin build
 ```
 
