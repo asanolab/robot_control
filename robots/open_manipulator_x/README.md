@@ -74,14 +74,17 @@ roslaunch open_manipulator_control_gui open_manipulator_control_gui.launch
 roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch
 ```
 
-<!-- under test
 ## moveit sample
 terminal1
 ```
 roslaunch open_manipulator_controllers joint_trajectory_controller.launch sim:=true
 ```
+Launch gazebo with open_manipulator_x and click Play button at the bottom of the gazebo window, then rviz(moveit) will be launch.
+
+![open_manipulator_x_gazebo_moveit](https://github.com/yuki-asano/robot_control/assets/6872136/6e74b95e-f828-4c7d-ae18-74f4aa3a7d08)
+
+
 terminal2
 ```
 ./open_manipulator_x_sample.py
 ```
--->
