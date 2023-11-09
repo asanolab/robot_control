@@ -2,7 +2,10 @@
 - github
   - https://github.com/ROBOTIS-GIT/open_manipulator
 - e-Manual
-  - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/
+  - Overview 
+    - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/
+  - Simulation
+    - https://emanual.robotis.com/docs/en/platform/openmanipulator_x/ros_simulation/
 - wiki
   - https://github.com/yuki-asano/robot_control/wiki/open_manipulator_x
 
@@ -25,11 +28,12 @@ roscd open_manipulator_description/urdf
 cp open_manipulator.urdf.xacro open_manipulator_robot.urdf.xacro
 ```
 
-# Connection
+# Real robot
+## Connection
 - connect OpenMANIPULATOR-x to OpenCR board via a TTL port
   - https://emanual.robotis.com/docs/en/parts/controller/opencr10/
 
-# Sample
+## Sample
 - controller
 ```
 [terminal1]
@@ -48,3 +52,13 @@ or Rviz gui
 
 ![open_manipulator_x_moveit_rviz](https://github.com/yuki-asano/robot_control/assets/6872136/ea43dcf3-9f9c-4a18-8a5b-95b14bb3e293)
 
+# Simulation
+```
+[terminal1]
+roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+```
+
+```
+[terminal2
+roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=false
+```
