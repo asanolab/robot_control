@@ -128,7 +128,9 @@
    )
   (:release-tool
    ()
-   (send *ri* :stop-grasp :arm))
+   (send *ri* :stop-grasp :arm)
+   (send *ri* :wait-interpolation)
+   )
   (:release-tool-cb
    (msg)
    (format t "/release_tool: ~A~%" (send msg :data))
@@ -180,7 +182,8 @@
        ;; gripper motion is executed before the pose of index i
        (when (equal i release-timing)
          (when (and run (not skip-gripper))
-           (send self :release-tool))
+           (send *ri* :stop-grasp :rarm)
+           (send *ri* :wait-interpolation))
          (send (car (last (send *robot* :rarm :links))) :dissoc place-obj)
          (when place-on
            (send place-on :assoc place-obj))
@@ -190,7 +193,9 @@
        (send self :solve-ik-rarm :tgc cn :wue wue :run run :time tn :cartesian cartesian))
      ;; if gripper motion is appropriate after the last pose
      (if (equal num-cl release-timing)
-         (send self :release-tool))
+         (progn
+           (send *ri* :stop-grasp :rarm)
+           (send *ri* :wait-interpolation)))
      ))
   )
 
