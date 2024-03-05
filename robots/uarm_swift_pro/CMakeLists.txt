@@ -5,16 +5,14 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-  message_generation
   )
 
 catkin_package(
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
+  CATKIN_DEPENDS roscpp rospy std_msgs
   )
 
 # add_message_files(
 #   FILES
-#   SwiftproState.msg
 #   )
 
 # generate_messages(
