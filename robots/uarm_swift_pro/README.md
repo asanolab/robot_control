@@ -24,7 +24,9 @@ roslaunch uarm_swift_pro swift_pro_display.launch
 ```
 roslaunch uarm_swift_pro swift_pro_control.launch
 roslaunch pro_moveit_config demo.launch
-./uarm_swift_pro_sample.py
+
+cd scripts
+./test_manip.py
 ```
 
 # Pump
