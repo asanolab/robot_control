@@ -16,7 +16,6 @@ def rad2deg(rad):
 
 class RobotInterface():
     def __init__(self, robot_name):
-        rospy.init_node("robot_interface")
         self.group = MoveGroupCommander(robot_name)
         self.group.set_planning_time(600.0)
 

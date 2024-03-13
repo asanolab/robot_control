@@ -7,6 +7,7 @@ from robot_interface import RobotInterface
 
 
 def main():
+    rospy.init_node("test_manip", anonymous=True)
     ri = RobotInterface("arm")
 
     # Pose 1
