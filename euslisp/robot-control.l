@@ -100,6 +100,31 @@
          :ll (send *robot* :link-list (send (send *robot* :rarm :end-coords) :parent))
          args)
    )
+  ;;[todo]
+  ;; - define higher level
+ (:solve-ik-rarm-relative
+  (diff)
+  ;; link setting
+  (setq mt (send *robot* :rarm :end-coords))
+  (setq ll (send *robot* :link-list (send (send *robot* :rarm :end-coords) :parent)))
+  ;; tgc
+  (setq tgc-now (send (send *robot* :rarm :end-coords) :copy-worldcoords))
+  (setq ec-pos-now (send tgc-now :worldpos))
+  (setq tgc-pos-new (v+ ec-pos-now diff))
+  (setq tgc-new (send tgc-now :locate tgc-pos-new :world))
+  ;; ik
+  (send *robot* :inverse-kinematics tgc-new
+        :move-target mt
+        :link-list ll
+        ;;:translation-axis ta
+        ;;:rotation-axis ra
+        ;;:thre thre
+        ;;:rthre (deg2rad rthre)
+        ;;:revert-if-fail rif
+        ;;:debug-view dv
+        ;;:stop stop
+        )
+  )
   ;;
   ;; for grasp
   ;; [todo]
