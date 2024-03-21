@@ -88,7 +88,7 @@ class RobotInterface():
             angle = deg2rad(target_angle_deg[i])
             target_angle.append(angle)
 
-        rospy.loginfo('target_angle: {}'.format(target_angle))
+        rospy.loginfo('target_angle[deg]: {}'.format(target_angle_deg))
 
         # moveit
         self.group.set_joint_value_target(target_angle)
@@ -104,11 +104,14 @@ class RobotInterface():
         # calculate target angle
         current_angle = self.group.get_current_joint_values()
         target_angle = []
+        target_angle_deg = []
         for i in range(len(current_angle)):
             angle = current_angle[i] + deg2rad(diff_angle[i])
+            angle_deg = deg2rad(angle)
             target_angle.append(angle)
+            target_angle_deg.append(angle_deg)
 
-        rospy.loginfo('target_angle: {}'.format(target_angle))
+        rospy.loginfo('target_angle[deg]: {}'.format(target_angle_deg))
 
         # moveit
         self.group.set_joint_value_target(target_angle)
@@ -122,5 +125,12 @@ class RobotInterface():
 
     def move(self):
         self.group.go()
-        rospy.sleep(0.5)
-        rospy.loginfo('current_angle: {}'.format(self.group.get_current_joint_values()))
+        rospy.sleep(0.5)  # need to change to interpolation time
+
+        current_angle = self.group.get_current_joint_values()
+        current_angle_deg = []
+        for i in range(len(current_angle)):
+            angle_deg = rad2deg(current_angle[i])
+            current_angle_deg.append(angle_deg)
+
+        rospy.loginfo('current_angle[deg]: {}'.format(current_angle_deg))
