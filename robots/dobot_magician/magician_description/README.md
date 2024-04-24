@@ -1,0 +1,1 @@
+This pkg is a modified version of https://forum.dobot.cc/t/urdf-for-dobot-magician/4512 which is ditributed with BSD.
