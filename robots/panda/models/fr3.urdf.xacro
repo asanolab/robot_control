@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="fr3" >
+
+  <!-- arguments -->
+  <xacro:arg name="arm_id" default="fr3" />
+  <xacro:arg name="hand" default="true" /> <!-- enable defalut hand -->
+
+  <!-- load -->
+  <xacro:include filename="$(find panda)/models/franka_arm.urdf.xacro" />
+
+</robot>

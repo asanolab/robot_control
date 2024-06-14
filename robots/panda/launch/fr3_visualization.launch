@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <include file="$(find panda)/launch/franka_arm_visualization.launch">
+    <arg name="rviz"          value="true" />
+    <arg name="gui"           value="true" />
+    <arg name="connect_robot" value="false" />
+    <arg name="arm"           value="fr3" />
+  </include>
+
+</launch>
