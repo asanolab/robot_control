@@ -1,7 +1,7 @@
 <package format="2">
   <name>panda</name>
   <version>1.1.0</version>
-  <description> panda interface </description>
+  <description> franka_arm interface </description>
 
   <maintainer email="yasano@g.ecc.u-tokyo.ac.jp">Yuki Asano</maintainer>
   <author email="yasano@g.ecc.u-tokyo.ac.jp">Yuki Asano</author>
@@ -12,8 +12,16 @@
   <depend>roscpp</depend>
   <depend>rospy</depend>
   <depend>std_msgs</depend>
+  <depend>xacro</depend>
 
-  <depend>panda_eus</depend>
+  <depend>franka_control</depend>
+  <depend>franka_description</depend>
+  <depend>franka_gripper</depend>
+  <depend>franka_msgs</depend>
+
+  <depend>euscollada</depend>
   <depend>jsk_panda_startup</depend>
+  <depend>panda_eus</depend>
+  <depend>pr2eus</depend>
 
 </package>
