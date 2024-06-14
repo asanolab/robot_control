@@ -1,4 +1,4 @@
-(require :fr3 "package://panda/euslisp/models/fr3.l")
+(require :fr3 "package://franka_arm/euslisp/models/fr3.l")
 
 (defmethod fr3-robot
   (:arm (&rest args) (send* self :rarm args))  ;; Enable to call (send *fr3* :arm :angle-vector)

@@ -6,7 +6,7 @@
 
   <!-- load -->
   <xacro:include filename="$(find franka_description)/robots/$(arg arm_id)/$(arg arm_id).urdf.xacro" />
-  <xacro:include filename="$(find panda)/models/pedestal.urdf.xacro" />
+  <xacro:include filename="$(find franka_arm)/models/pedestal.urdf.xacro" />
 
   <!-- base -->
   <link name="world" />

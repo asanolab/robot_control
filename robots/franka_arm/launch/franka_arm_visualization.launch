@@ -7,7 +7,7 @@
   <arg name="arm" default="panda"/>
 
   <!-- load model -->
-  <param name="robot_description" command="$(find xacro)/xacro $(find panda)/models/$(arg arm).urdf.xacro" />
+  <param name="robot_description" command="$(find xacro)/xacro $(find franka_arm)/models/$(arg arm).urdf.xacro" />
 
   <!-- when robot is disconnected -->
   <group unless="$(arg connect_robot)" >
@@ -17,6 +17,6 @@
   </group>
 
   <!-- rviz -->
-  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find panda)/config/$(arg arm)_visualization.rviz" />
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find franka_arm)/config/$(arg arm)_visualization.rviz" />
 
 </launch>

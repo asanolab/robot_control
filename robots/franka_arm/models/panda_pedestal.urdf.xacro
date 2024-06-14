@@ -6,6 +6,6 @@
   <xacro:arg name="hand" default="true" /> <!-- enable defalut hand -->
 
   <!-- load -->
-  <xacro:include filename="$(find panda)/models/franka_arm_pedestal.urdf.xacro" />
+  <xacro:include filename="$(find franka_arm)/models/franka_arm_pedestal.urdf.xacro" />
 
 </robot>

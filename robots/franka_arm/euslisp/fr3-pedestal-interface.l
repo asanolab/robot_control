@@ -1,5 +1,5 @@
-(require :fr3-interface "package://panda/euslisp/fr3-interface.l")
-(require :fr3-pedestal "package://panda/euslisp/models/fr3-pedestal.l")
+(require :fr3-interface "package://franka_arm/euslisp/fr3-interface.l")
+(require :fr3-pedestal "package://franka_arm/euslisp/models/fr3-pedestal.l")
 
 (defclass fr3-pedestal-robot-interface
   :super fr3-robot-interface

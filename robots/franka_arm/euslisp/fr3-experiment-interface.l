@@ -1,5 +1,5 @@
-(require :fr3-interface "package://panda/euslisp/fr3-interface.l")
-(require :fr3-experiment "package://panda/euslisp/models/fr3-experiment.l")
+(require :fr3-interface "package://franka_arm/euslisp/fr3-interface.l")
+(require :fr3-experiment "package://franka_arm/euslisp/models/fr3-experiment.l")
 
 (defclass fr3-experiment-robot-interface
   :super fr3-robot-interface

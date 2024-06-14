@@ -1,5 +1,5 @@
 (require :panda-interface "package://panda_eus/euslisp/panda-interface.l")  ;; fr3-interface inherits panda-interface.l
-(require :fr3-utils "package://panda/euslisp/fr3-utils.l")
+(require :fr3-utils "package://franka_arm/euslisp/fr3-utils.l")
 
 (defclass fr3-robot-interface
   :super panda-robot-interface

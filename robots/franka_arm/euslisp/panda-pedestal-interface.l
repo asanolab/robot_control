@@ -1,5 +1,5 @@
 (require :robot-interface "package://panda_eus/euslisp/panda-interface.l")
-(require :panda-pedestal "package://panda/euslisp/models/panda-pedestal.l")
+(require :panda-pedestal "package://franka_arm/euslisp/models/panda-pedestal.l")
 
 (defclass panda-pedestal-robot-interface
   :super panda-robot-interface
