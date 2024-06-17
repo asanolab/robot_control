@@ -1,7 +1,6 @@
 # Contents of this repository
-- source code of dobotdll
 - src dir is the same with the src of DobotDemoV2.0
--- dobotdll/src = DobotDemoV2.0/DobotDll/DobotDll source code/src
+  - dobotdll/src = DobotDemoV2.0/DobotDll/DobotDll source code/src
 
 - Get DobotDemoV2.0
 ```
