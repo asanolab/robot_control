@@ -1,3 +1,13 @@
+# Setup
+## Requirement
+- Magician_ROS
+-- officially provided from the Dobot-Arm pkg
+-- https://github.com/Dobot-Arm/Magician_ROS
+- dobotdll (from DobotDemoV2.0)
+-- V2.0 is compatible with Magician_ROS
+-- V2.3 (latest version) which can be downloaded from the download center, V2.2 and V2.1 are not compatible with Magician_ROS
+--- Download center -> https://www.dobot-robots.com/service/download-center?keyword=&products%5B%5D=316
+
 # memo
 - python3 is assumed to be used
 
