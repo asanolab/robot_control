@@ -19,7 +19,7 @@ catkin bt
 ```
 roslaunch dobot_magician_moveit_config demo.launch 
 ```
-![Screenshot from 2024-06-18 10-08-49](https://github.com/asanolab/robot_control/assets/6872136/12009c49-e4e0-42b1-b12c-4204741769ff)
+![dobot_magician_moveit](https://github.com/asanolab/robot_control/assets/6872136/681fda1f-63ea-4560-aeaf-431f8169971f)
 
 
 # memo
