@@ -1,5 +1,5 @@
 <package>
-  <name>magician_description</name>
+  <name>dobot_magician_description</name>
   <version>1.0.0</version>
   <description>
     <p>URDF Description package for urdf.xml</p>

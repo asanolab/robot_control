@@ -19,14 +19,14 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/base_link.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/base_link.STL"/>
             </geometry>
             <material name="White"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/base_link.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/base_link.STL"/>
             </geometry>
         </collision>
         <inertial>
@@ -52,14 +52,14 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_1.dae"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_1.dae"/>
             </geometry>
             <!--material name="White"/-->
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_1.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_1.STL"/>
             </geometry>
         </collision>
         <inertial>
@@ -86,14 +86,14 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_2.dae"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_2.dae"/>
             </geometry>
             <!--material name="Black"/-->
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_2.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_2.STL"/>
             </geometry>
         </collision>
         <inertial>
@@ -122,13 +122,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_3.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_3.STL"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_3.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_3.STL"/>
             </geometry>
         </collision>
     </link>
@@ -149,13 +149,13 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_4.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_4.STL"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_4.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_4.STL"/>
             </geometry>
         </collision>
     </link>
@@ -173,14 +173,14 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_5.dae"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_5.dae"/>
             </geometry>
             <!-- material name="White"/-->
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_5.dae"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_5.dae"/>
             </geometry>
         </collision>
         <inertial>
@@ -207,14 +207,14 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_6.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_6.STL"/>
             </geometry>
             <material name="Grey"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_6.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_6.STL"/>
             </geometry>
         </collision>
         <inertial>
@@ -242,14 +242,14 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_7.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_7.STL"/>
             </geometry>
             <material name="Black"/>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://magician_description/meshes/link_7.STL"/>
+                <mesh filename="package://dobot_magician_description/meshes/link_7.STL"/>
             </geometry>
         </collision>
         <inertial>

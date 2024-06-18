@@ -1,6 +1,6 @@
 moveit_setup_assistant_config:
   URDF:
-    package: magician_description
+    package: dobot_magician_description
     relative_path: urdf/demo.urdf
     xacro_args: ""
   SRDF:
@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: Yuki Asano
     author_email: yasano@g.ecc.u-tokyo.ac.jp
-    generated_timestamp: 1718672343
+    generated_timestamp: 1718681496
