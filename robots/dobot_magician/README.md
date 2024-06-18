@@ -15,9 +15,15 @@ catkin bt
 ```
 
 # Demo
-## moveit
+## moveit (interactive)
 ```
-roslaunch dobot_magician_moveit_config demo.launch 
+roslaunch dobot_magician_moveit_config demo.launch
+```
+
+## moveit (motion by commands)
+```
+roslaunch dobot_magician_moveit_config demo.launch
+rosrun dobot_magician_interface test_manip_dobot_magician.py
 ```
 ![dobot_magician_moveit](https://github.com/asanolab/robot_control/assets/6872136/681fda1f-63ea-4560-aeaf-431f8169971f)
 
