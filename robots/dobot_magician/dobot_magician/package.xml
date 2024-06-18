@@ -13,7 +13,7 @@
   <depend>rospy</depend>
   <depend>std_msgs</depend>
 
-  <depend>magician_description</depend>
+  <depend>dobot_magician_description</depend>
   <depend>dobotdll</depend>
   <depend>dobot</depend>
 

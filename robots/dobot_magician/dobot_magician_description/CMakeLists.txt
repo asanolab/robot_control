@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(magician_description)
+project(dobot_magician_description)
 
 find_package(catkin REQUIRED)
 
