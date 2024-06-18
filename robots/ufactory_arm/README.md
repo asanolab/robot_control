@@ -1,6 +1,6 @@
 # Install
 ```
-cd lite6
+cd ufactory_arm
 catkin bt
 ```
 
