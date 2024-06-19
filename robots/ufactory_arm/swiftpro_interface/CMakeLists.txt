@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 2.8.0)
-project(uarm_swift_pro)
+project(swiftpro_interface)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
   )
+
+catkin_python_setup()
 
 catkin_package(
   CATKIN_DEPENDS roscpp rospy std_msgs
