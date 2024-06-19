@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.0)
-project(uarm_swift_pro)
+project(swift_pro_interface)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp

@@ -1,6 +1,6 @@
 <?xml version='1.0' ?>
 
 <launch>
-  <include file="$(find uarm_swift_pro)/launch/swift_pro_control.launch" />
+  <include file="$(find swift_pro_interface)/launch/swift_pro_control.launch" />
   <include file="$(find pro_moveit_config)/launch/demo.launch" />
 </launch>
