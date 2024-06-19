@@ -1,8 +1,11 @@
+# swiftpro_interface
+Software for uArm SwiftPro
+
 # References
 - API (github)
   - https://github.com/uArm-Developer/RosForSwiftAndSwiftPro
 
-# Install
+# Build
 ```bash
 catkin bt
 ```
