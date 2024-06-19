@@ -1,7 +1,7 @@
 <package format="2">
-  <name>swift_pro_interface</name>
+  <name>swiftpro_interface</name>
   <version>1.1.0</version>
-  <description> uArm Swift Pro </description>
+  <description> uArm Swift Pro interface </description>
 
   <maintainer email="yasano@g.ecc.u-tokyo.ac.jp">Yuki Asano</maintainer>
   <author email="yasano@g.ecc.u-tokyo.ac.jp">Yuki Asano</author>

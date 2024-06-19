@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.0)
-project(swift_pro_interface)
+project(swiftpro_interface)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp

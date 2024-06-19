@@ -8,6 +8,6 @@
   <node name="swiftpro_read_node" pkg="swiftpro" type="swiftpro_read_node" />
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-  <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find swift_pro_interface)/config/swift_pro.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find swiftpro_interface)/config/swiftpro.rviz"/>
 
 </launch>

@@ -9,7 +9,7 @@ catkin bt
 
 # Visualization (Rviz)
 ```
-roslaunch swift_pro_interface swift_pro_display.launch
+roslaunch swiftpro_interface swiftpro_display.launch
 ```
 
 # Demo
@@ -21,13 +21,13 @@ roslaunch pro_moveit_config demo.launch
 
 ### By command
 ```
-roslaunch swift_pro_interface swift_pro_moveit_manip.launch
-rosrun swift_pro_interface test_manip_swiftpro.py
+roslaunch swiftpro_interface swiftpro_moveit_manip.launch
+rosrun swiftpro_interface test_manip_swiftpro.py
 ```
 
 ## Pump
 ```
-roslaunch swift_pro_interface swift_pro_bringup.launch
+roslaunch swiftpro_interface swiftpro_bringup.launch
 
 cd scripts
 ./test_pump_on.py   # pump on

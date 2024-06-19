@@ -14,6 +14,6 @@
   <depend>std_msgs</depend>
 
   <depend>lite6_interface</depend>
-  <depend>swift_pro_interface</depend>
+  <depend>swiftpro_interface</depend>
 
 </package>

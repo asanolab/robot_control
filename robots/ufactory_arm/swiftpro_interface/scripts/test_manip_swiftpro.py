@@ -4,11 +4,11 @@
 import rospy
 import math
 
-from swift_pro_interface.swift_pro_interface import SwiftproInterface
+from swiftpro_interface.swiftpro_interface import SwiftproInterface
 
 
 def main():
-    rospy.init_node("test_manip_swift_pro", anonymous=True)
+    rospy.init_node("test_manip_swiftpro", anonymous=True)
     ri = SwiftproInterface("arm")
 
     # Initial Pose
