@@ -16,5 +16,12 @@
   <depend>roseus</depend>
   <depend>ros_control</depend>
   <depend>ros_controllers</depend>
+  <!-- common -->
+  <depend>robot_interface</depend>
+  <!-- robots -->
+  <depend>dobot_magician</depend>
+  <depend>franka_arm</depend>
+  <depend>open_manipulator_x</depend>
+  <depend>ufactory_arm</depend>
 
 </package>
