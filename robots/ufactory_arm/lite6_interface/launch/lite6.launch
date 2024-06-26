@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <arg name="robot_ip"   default="192.168.0.42"/>
+  <arg name="show_rviz"  default="false "/>
+
+  <include file="$(find xarm_bringup)/launch/lite6_server.launch">
+    <arg name="robot_ip"     value="$(arg robot_ip)" />
+    <arg name="show_rviz"    value="$(arg show_rviz)" />
+  </include>
+
+  <include file="$(find lite6_moveit_config)/launch/demo.launch" />
+
+  <!-- <node name="position_joint_trajectory_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="position_joint_trajectory_controller" /> -->
+</launch>

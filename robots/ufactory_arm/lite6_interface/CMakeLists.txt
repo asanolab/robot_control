@@ -4,6 +4,7 @@ project(lite6_interface)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
+  xarm_msgs
   )
 
 catkin_python_setup()
