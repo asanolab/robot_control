@@ -3,19 +3,29 @@
 
   <!-- arguments -->
   <xacro:arg name="arm_id" default="panda" />
+  <xacro:arg name="arm_origin" default="world" />
 
   <!-- load -->
   <xacro:include filename="$(find franka_description)/robots/$(arg arm_id)/$(arg arm_id).urdf.xacro" />
   <xacro:include filename="$(find franka_arm)/models/pedestal.urdf.xacro" />
 
-  <!-- base -->
-  <link name="world" />
+  <!-- macro -->
+  <xacro:macro name="franka_arm_pedastal"
+               params="arm_id
+                       arm_origin:='world'
+                       ">
+    <!-- generate the link where the robot attached to-->
+    <link name="${arm_origin}" />
 
-  <joint name="world_to_$(arg arm_id)" type="fixed">
-    <origin xyz="0 0 0.79" rpy="0 0 0"/>  <!-- Pedestal height [mm] from its drawing. 800 (stand leg), 790 (wheel) -->
-    <parent link="world"/>
-    <child link="$(arg arm_id)_link0"/>
-  </joint>
+    <joint name="${arm_origin}_to_$(arg arm_id)" type="fixed">
+      <origin xyz="0 0 0.79" rpy="0 0 0"/>  <!-- Pedestal height [mm] from its drawing. 800 (stand leg), 790 (wheel) -->
+      <parent link="${arm_origin}"/>
+      <child  link="$(arg arm_id)_link0"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- franka_arm_pedastal -->
+  <xacro:franka_arm_pedastal arm_id="$(arg arm_id)" arm_origin="$(arg arm_origin)" />
 
   <!-- pedestal -->
   <xacro:pedestal arm_id="$(arg arm_id)" />
