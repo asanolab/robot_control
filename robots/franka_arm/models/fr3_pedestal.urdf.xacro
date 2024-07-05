@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="fr3_pedestal" >
+  <!-- paremeters -->
+  <xacro:arg name="franka_arm_pedestal_id"     default="fr3" />
+  <xacro:arg name="franka_arm_pedestal_origin" default="world" />
+  <xacro:arg name="franka_arm_pedestal_hand"   default="true" />
+  <xacro:property name="franka_arm_pedestal_joint_limits" default="${xacro.load_yaml('$(find franka_description)/robots/$(arg franka_arm_pedestal_id)/joint_limits.yaml')}" />
 
-  <!-- arguments -->
-  <xacro:arg name="arm_id" default="fr3" />
-  <xacro:arg name="hand" default="true" /> <!-- enable defalut hand -->
-
-  <!-- load -->
+  <!-- franka_arm_pedestal -->
   <xacro:include filename="$(find franka_arm)/models/franka_arm_pedestal.urdf.xacro" />
+  <xacro:franka_arm_pedestal franka_arm_pedestal_id="$(arg franka_arm_pedestal_id)" franka_arm_pedestal_origin="$(arg franka_arm_pedestal_origin)" franka_arm_pedestal_joint_limits="${franka_arm_pedestal_joint_limits}" franka_arm_pedestal_hand="$(arg franka_arm_pedestal_hand)" />
 
 </robot>

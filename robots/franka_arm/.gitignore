@@ -1,12 +1,8 @@
 models/panda.urdf
 models/panda_pedestal.urdf
-models/panda_experiment.urdf
 models/fr3.urdf
 models/fr3_pedestal.urdf
-models/fr3_experiment.urdf
 euslisp/models/panda.l
 euslisp/models/panda-pedestal.l
-euslisp/models/panda-experiment.l
 euslisp/models/fr3.l
 euslisp/models/fr3-pedestal.l
-euslisp/models/fr3-experiment.l

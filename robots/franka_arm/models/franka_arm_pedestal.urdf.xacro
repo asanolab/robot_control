@@ -1,23 +1,27 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="franka_arm_pedestal" >
+  <!-- paremeters -->
+  <xacro:property name="franka_arm_pedestal_origin_xyz" value="0 0 0.79" />  <!-- Pedestal height [mm] from its drawing. 800 (stand leg), 790 (wheel) -->
 
-  <!-- arguments -->
-  <xacro:arg name="arm_id" default="panda" />
+  <!-- macro -->
+  <xacro:macro name="franka_arm_pedestal" params="franka_arm_pedestal_id:='panda' franka_arm_pedestal_origin:='world' franka_arm_pedestal_joint_limits:='' franka_arm_pedestal_hand:='true'" >
+    <!-- arm -->
+    <xacro:include filename="$(find franka_description)/robots/common/franka_arm.xacro" />
+    <xacro:franka_arm arm_id="${franka_arm_pedestal_id}" connected_to="${franka_arm_pedestal_origin}" xyz="${franka_arm_pedestal_origin_xyz}" safety_distance="0.03" joint_limits="${franka_arm_pedestal_joint_limits}"/>
 
-  <!-- load -->
-  <xacro:include filename="$(find franka_description)/robots/$(arg arm_id)/$(arg arm_id).urdf.xacro" />
-  <xacro:include filename="$(find franka_arm)/models/pedestal.urdf.xacro" />
+    <!-- hand -->
+    <xacro:if value="${franka_arm_pedestal_hand}">
+      <xacro:include filename="$(find franka_description)/robots/common/franka_hand.xacro" />
+      <xacro:franka_hand arm_id="${franka_arm_pedestal_id}" rpy="0 0 ${-pi/4}" connected_to="${franka_arm_pedestal_id}_link8" safety_distance="0.03"/>
+    </xacro:if>
 
-  <!-- base -->
-  <link name="world" />
+    <!-- generate the link where the robot connected to-->
+    <link name="${franka_arm_pedestal_origin}" />
 
-  <joint name="world_to_$(arg arm_id)" type="fixed">
-    <origin xyz="0 0 0.79" rpy="0 0 0"/>  <!-- Pedestal height [mm] from its drawing. 800 (stand leg), 790 (wheel) -->
-    <parent link="world"/>
-    <child link="$(arg arm_id)_link0"/>
-  </joint>
+    <!-- pedestal -->
+    <xacro:include filename="$(find franka_arm)/models/pedestal.urdf.xacro" />
+    <xacro:pedestal arm_id="${franka_arm_pedestal_id}" />
 
-  <!-- pedestal -->
-  <xacro:pedestal arm_id="$(arg arm_id)" />
+  </xacro:macro>
 
 </robot>
