@@ -1,17 +1,25 @@
 # robot_control
 
-## Install
+## Install & Build
 Install ROS
 - melodic
   - https://wiki.ros.org/melodic/Installation/Ubuntu
 - noetic
   - https://wiki.ros.org/noetic/Installation/Ubuntu 
 
-## Setup
+Workspace setup
 ```
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 wstool init .
 
 git clone https://github.com/asanolab/robot_control.git
+
+rosdep install -y -r --from-paths robot_control --ignore-src
+```
+
+Build
+```
+cd robot_control/robot_control
+catkin bt
 ```
