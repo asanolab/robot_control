@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-
-from xarm_msgs.srv import Move
+from xarm_msgs.srv import Move,SetInt16
 
 from robot_interface.robot_interface import RobotInterface,deg2rad,rad2deg
 
@@ -36,3 +35,21 @@ class Lite6Interface(RobotInterface):
             rospy.sleep(self.ip_time)  # need to change to interpolation time
         except rospy.ServiceException as e:
             print('Service call failed: %s' % e)
+
+
+    def gripper_command(self, val):
+        rospy.wait_for_service('/lite6/vacuum_gripper_set')
+        try:
+            s = rospy.ServiceProxy('/lite6/vacuum_gripper_set', SetInt16)
+            res = s(val)
+            rospy.loginfo(res.message)
+        except rospy.ServiceException as e:
+            print("Service call failed: %s"%e)
+
+
+    def gripper_open(self):
+        self.gripper_command(1)
+
+
+    def gripper_close(self):
+        self.gripper_command(0)
