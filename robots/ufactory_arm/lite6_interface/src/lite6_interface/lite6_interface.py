@@ -15,10 +15,11 @@ class Lite6Interface(RobotInterface):
         self.ip_time = 1       # [s]
 
 
+    # overwrite
     def move_real_robot(self):
-        rospy.wait_for_service('/ufactory/move_joint')
+        rospy.wait_for_service('/lite6/move_joint')
         try:
-            move_joint = rospy.ServiceProxy('/ufactory/move_joint', Move)
+            move_joint = rospy.ServiceProxy('/lite6/move_joint', Move)
             res = move_joint(self.target_angle, self.max_speed, self.max_acc, 0, 0)
             '''
             args (xarm_msgs/srv/Move.srv):
