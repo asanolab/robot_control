@@ -3,7 +3,7 @@
 
 import rospy
 
-from robot_interface import RobotInterface
+from robot_interface.robot_interface import RobotInterface
 
 
 class SwiftproInterface(RobotInterface):
