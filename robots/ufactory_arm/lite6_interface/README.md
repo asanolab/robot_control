@@ -8,14 +8,17 @@ catkin bt
 ```
 
 # Demo
-## Moveit (interactive)
+## Manipulation (moveit)
+- Simulation
 ```
-roslaunch lite6_moveit_config demo.launch
-```
+roslaunch lite6_moveit_config demo.launch  # interactive planning in rviz
 
-## Moveit (motion by command)
-```
-roslaunch lite6_moveit_config demo.launch
-rosrun lite6_interface test_manip_lite6.py
+rosrun lite6_interface test_manip_lite6.py  # sample motion by command
 ```
 ![lite6_moveit](https://github.com/asanolab/robot_control/assets/6872136/632aa2d6-1aec-4f7b-83ef-2bf6f9e58d08)
+
+- Real robot motion
+```
+roslaunch lite6_moveit_config realMove_exec.launch robot_ip:=192.168.0.2  # use ip address of the robot
+rosrun lite6_interface test_manip_lite6.py
+```
