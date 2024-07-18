@@ -24,8 +24,12 @@ class RobotInterface():
         self.pose_current = self.pose_init
         self.rpy_init  = self.group.get_current_rpy()
         self.rpy_current = self.rpy_init
+        self.angle_current = self.group.get_current_joint_values()
         rospy.loginfo("Get Initial Pose\n{}".format(self.pose_init))
         rospy.loginfo("Get Initial RPY:{}".format(self.rpy_init))
+
+        self.target_angle = []
+        self.pose_target = []
 
 
     def update_current_pose(self):
@@ -44,7 +48,8 @@ class RobotInterface():
         - pose_target: [x, y, z, R, P, Y] [m(xyz), rad(RPY)]
         -- target position values in absolute coordinates
         '''
-        self.group.set_pose_target(pose_target)
+        self.pose_target = pose_target
+        self.group.set_pose_target(self.pose_target)
         self.move()
 
 
@@ -69,11 +74,11 @@ class RobotInterface():
         r_rot_diff = deg2rad(pose_diff[3])
         p_rot_diff = deg2rad(pose_diff[4])
         y_rot_diff = deg2rad(pose_diff[5])
-        pose_target = [x_current+x_diff, y_current+y_diff, z_current+z_diff, r_rot_current+r_rot_diff, p_rot_current+p_rot_diff, y_rot_current+y_rot_diff]
-        rospy.loginfo('pose_target: {}'.format(pose_target))
+        self.pose_target = [x_current+x_diff, y_current+y_diff, z_current+z_diff, r_rot_current+r_rot_diff, p_rot_current+p_rot_diff, y_rot_current+y_rot_diff]
+        rospy.loginfo('pose_target: {}'.format(self.pose_target))
 
         # moveit
-        self.group.set_pose_target(pose_target)
+        self.group.set_pose_target(self.pose_target)
         self.move()
 
 
@@ -83,15 +88,15 @@ class RobotInterface():
         - target_angle: [j0, j1, j2, ...] [deg]
         -- target angle values in absolute coordinates
         '''
-        target_angle = []
+        self.target_angle = []
         for i in range(len(target_angle_deg)):
             angle = deg2rad(target_angle_deg[i])
-            target_angle.append(angle)
+            self.target_angle.append(angle)
 
         rospy.loginfo('target_angle[deg]: {}'.format(target_angle_deg))
 
         # moveit
-        self.group.set_joint_value_target(target_angle)
+        self.group.set_joint_value_target(self.target_angle)
         self.move()
 
 
@@ -102,19 +107,19 @@ class RobotInterface():
         -- relative angle values from current joint values
         '''
         # calculate target angle
-        current_angle = self.group.get_current_joint_values()
-        target_angle = []
+        self.angle_current = self.group.get_current_joint_values()
+        self.target_angle = []
         target_angle_deg = []
-        for i in range(len(current_angle)):
-            angle = current_angle[i] + deg2rad(diff_angle[i])
+        for i in range(len(self.angle_current)):
+            angle = self.angle_current[i] + deg2rad(diff_angle[i])
             angle_deg = deg2rad(angle)
-            target_angle.append(angle)
+            self.target_angle.append(angle)
             target_angle_deg.append(angle_deg)
 
         rospy.loginfo('target_angle[deg]: {}'.format(target_angle_deg))
 
         # moveit
-        self.group.set_joint_value_target(target_angle)
+        self.group.set_joint_value_target(self.target_angle)
         self.move()
 
 
@@ -123,14 +128,26 @@ class RobotInterface():
         self.move()
 
 
-    def move(self):
+    def move_sim_robot(self):
         self.group.go()
-        rospy.sleep(0.5)  # need to change to interpolation time
+        rospy.sleep(0.1)  # need to change to interpolation time
 
-        current_angle = self.group.get_current_joint_values()
-        current_angle_deg = []
-        for i in range(len(current_angle)):
-            angle_deg = rad2deg(current_angle[i])
-            current_angle_deg.append(angle_deg)
+        self.angle_current = self.group.get_current_joint_values()
+        angle_current_deg = []
+        for i in range(len(self.angle_current)):
+            angle_deg = rad2deg(self.angle_current[i])
+            angle_current_deg.append(angle_deg)
 
-        rospy.loginfo('current_angle[deg]: {}'.format(current_angle_deg))
+        self.target_angle = self.angle_current  # update target_angle for commands which move joints directly
+
+        rospy.loginfo('angle_current[deg]: {}'.format(angle_current_deg))
+
+
+    def move_real_robot(self):
+        'This is assumed to be overriden by each robot interface'
+        print('')
+
+
+    def move(self):
+        self.move_sim_robot()
+        self.move_real_robot()

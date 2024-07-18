@@ -14,6 +14,11 @@
   <depend>std_msgs</depend>
 
   <depend>lite6_moveit_config</depend>
+  <depend>xarm_bringup</depend>
+  <depend>xarm_control</depend>
   <depend>xarm_description</depend>
+  <depend>xarm_msgs</depend>
+
+  <depend>robot_interface</depend>
 
 </package>
