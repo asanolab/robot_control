@@ -1,6 +1,6 @@
 <package format="2">
   <name>swiftpro_interface</name>
-  <version>1.1.0</version>
+  <version>0.1.0</version>
   <description> uArm Swift Pro interface </description>
 
   <maintainer email="yasano@g.ecc.u-tokyo.ac.jp">Yuki Asano</maintainer>
@@ -15,6 +15,7 @@
   <depend>std_msgs</depend>
 
   <depend>pro_moveit_config</depend>
+  <depend>libserial-dev</depend>  <!-- for swiftpro pkg -->
   <depend>swiftpro</depend>
 
   <depend>robot_interface</depend>
