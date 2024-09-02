@@ -21,5 +21,6 @@ rosdep install -y -r --from-paths robot_control --ignore-src
 Build
 ```
 cd robot_control/robot_control
+git submodule update --init --recursive
 catkin bt
 ```
