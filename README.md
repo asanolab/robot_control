@@ -12,9 +12,12 @@ Workspace setup
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 wstool init .
+catkin build
+```
 
+Clone the repository and install dependencies
+```
 git clone https://github.com/asanolab/robot_control.git
-
 rosdep install -y -r --from-paths robot_control --ignore-src
 ```
 
