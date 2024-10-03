@@ -1,6 +1,3 @@
 [submodule "robots/dobot_magician/Magician_ROS"]
 	path = robots/dobot_magician/Magician_ROS
 	url = git@github.com:asanolab/Magician_ROS.git
-[submodule "robots/ufactory_arm/ufactory_api/xarm_ros"]
-	path = robots/ufactory_arm/ufactory_api/xarm_ros
-	url = git@github.com:asanolab/xarm_ros.git
