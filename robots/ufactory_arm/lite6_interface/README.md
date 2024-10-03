@@ -1,9 +1,22 @@
 # lite6_interface
 Software for UFactory Lite6
 
-# Build
-```
-cd ufactory_arm
+## References
+  - API (github)
+    - https://github.com/xArm-Developer/xarm_ros.git
+
+## Setup 
+### Workspace setup
+- Create workspace before start
+  - https://github.com/asanolab/robot_control
+
+- Workspace setup and build
+```bash
+cd lite6_interface
+wstool merge -t ~/catkin_ws/src/ install/lite6_interface.noetic.rosinstall 
+wstool update
+rosdep install -y -r --from-paths . --ignore-src
+
 catkin bt
 ```
 
