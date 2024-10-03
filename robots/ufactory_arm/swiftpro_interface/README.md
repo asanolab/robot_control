@@ -1,12 +1,13 @@
 # swiftpro_interface
 Software for uArm SwiftPro
-- References
+## References
   - API (github)
     - https://github.com/uArm-Developer/RosForSwiftAndSwiftPro
 
-## Setup & build
+## Setup 
+### Build
 Setup workspace
-- https://github.com/asanolab/robot_control
+  - https://github.com/asanolab/robot_control
 
 Build
 ```bash
