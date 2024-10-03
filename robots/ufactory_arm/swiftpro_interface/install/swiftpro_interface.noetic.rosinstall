@@ -1,0 +1,4 @@
+- git:
+    local-name: ufactory_api/RosForSwiftAndSwiftPro
+    uri: https://github.com/uArm-Developer/RosForSwiftAndSwiftPro.git
+    version: master

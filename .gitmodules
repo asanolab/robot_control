@@ -4,6 +4,3 @@
 [submodule "robots/ufactory_arm/ufactory_api/xarm_ros"]
 	path = robots/ufactory_arm/ufactory_api/xarm_ros
 	url = git@github.com:asanolab/xarm_ros.git
-[submodule "robots/ufactory_arm/ufactory_api/RosForSwiftAndSwiftPro"]
-	path = robots/ufactory_arm/ufactory_api/RosForSwiftAndSwiftPro
-	url = https://github.com/asanolab/RosForSwiftAndSwiftPro.git
