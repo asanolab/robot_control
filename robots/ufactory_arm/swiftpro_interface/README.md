@@ -5,13 +5,16 @@ Software for uArm SwiftPro
     - https://github.com/uArm-Developer/RosForSwiftAndSwiftPro
 
 ## Setup 
-### Build
-Setup workspace
+### Workspace setup
+- Create workspace before start
   - https://github.com/asanolab/robot_control
-
-Build
+- Workspace setup and build
 ```bash
 cd swiftpro_interface
+wstool merge -t ~/catkin_ws/src/ install/swiftpro_interface.noetic.rosinstall 
+wstool update
+rosdep install -y -r --from-paths . --ignore-src
+
 catkin bt
 ```
 
