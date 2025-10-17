@@ -14,9 +14,9 @@ def rad2deg(rad):
     return math.degrees(rad)
 
 
-class RobotInterface():
-    def __init__(self, robot_name):
-        self.group = MoveGroupCommander(robot_name)
+class RobotInterface(object):
+    def __init__(self, move_group_name):
+        self.group = MoveGroupCommander(move_group_name)
         self.group.set_planning_time(600.0)
 
         # Getting Initial Pose & RPY
