@@ -10,10 +10,18 @@
   - python3.8
   - omniORBpy4.2.4
 
-## Install & Build (omniorb)
+## Build
+corba通信のためにomniORBとomniORBpyが必要  
+
 - python3
-  - buildが必要. sourceforgeから, omniORBpy4.2.4をダウンロード.
-  - https://sourceforge.net/projects/omniorb/files/omniORBpy/
+  - buildスクリプトを実行する. 
+  ```
+  cd install
+  sudo ./build.sh
+  ```
+  - sourceforgeから,直接omniORB-4.2.4とomniORBpy-4.2.4をダウンロードしてbuildしてもよい.
+    - https://sourceforge.net/projects/omniorb/files/omniORB
+    - https://sourceforge.net/projects/omniorb/files/omniORBpy
 
 - python2
   - omniorbはaptでインストール出来る
