@@ -17,8 +17,9 @@ if [ ! -d ${OMNI_BASE} ]; then
     tar xvfj ${OMNI_TAR}
 fi
 
+rm -rf ${OMNI_BASE}/build
 mkdir -p ${OMNI_BASE}/build
-cd ${OMNI_BASE}/build; ./../configure PYTHON=/usr/bin/python3  # PYTHON引数でpython3を指定. デフォルトで/usr/localにインストールされる.
+cd ${OMNI_BASE}/build; ./../configure PYTHON=/usr/bin/python3 --prefix=/usr/local # PYTHON引数でpython3を指定. デフォルトで/usr/localにインストールされる.
 cd build; make -j$(nproc)
 sudo cd build; make install
 
@@ -32,7 +33,8 @@ if [ ! -d ${OMPY_BASE} ]; then
     tar xvfj ${OMPY_TAR}
 fi
 
+rm -rf ${OMPY_BASE}/build
 mkdir -p ${OMPY_BASE}/build
-cd ${OMPY_BASE}/build; ./../configure PYTHON=/usr/bin/python3  # omniORBと同じ
+cd ${OMPY_BASE}/build; ./../configure PYTHON=/usr/bin/python3 --with-omniorb=/usr/local --prefix=/usr/local # omniORBと同じくpython3を指定. omniorbの場所も指定.
 cd build; make -j$(nproc)
 sudo cd build; make install
