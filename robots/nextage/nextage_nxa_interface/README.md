@@ -31,8 +31,9 @@ sudo apt install libomniorb4-dev omniorb-idl omniidl build-essential
   - pathを.bashrcに追加
   ```
   export PYTHONPATH=/usr/local/lib/python3.8/site-packages:$PYTHONPATH
-  ```
+  export PYTHONPATH=/PATH_to_API/NxApiSdk/python/lib/NxApiLib/idl_NxApi:$PYTHONPATH
 
+  ```
 
 - python2
   - omniorbはaptでインストール出来る
