@@ -1,1 +1,47 @@
-# nextage_interface
+# nextage_nxa_interface
+
+# Setup
+## Memo
+- python3が推奨(3.8, 3.10). omniORBpyのbuildが必要になる
+- pytyon2だと、ユニコード問題や今後の環境構築の制約になりうるので.
+
+- 動作確認
+  - ubuntu20.04
+  - python3.8
+  - omniORBpy4.2.4
+
+## Install & Build (omniorb)
+- python3
+  - buildが必要. sourceforgeから, omniORBpy4.2.4をダウンロード.
+  - https://sourceforge.net/projects/omniorb/files/omniORBpy/
+
+- python2
+  - omniorbはaptでインストール出来る
+  ```
+  sudo apt install python-omniorb
+  ```
+
+## バージョンによる注意点
+- python3.8の場合  
+anyは、omniORBからimport (API manualに記載)
+  ```
+  from omniORB import CORBA, any as ANY
+  ```
+
+- python3.10の場合  
+anyは、NxApiLibからimportする. (配布されているサンプルプログラム参照. python3.8と3.10で何か変わった？)
+  ```
+  from omniORB import CORBA
+  from NxApiLib import any as ANY
+  ```
+
+- python2の場合  
+anyはomniORBからimportする
+  ```
+  from omniORB import CORBA, any as ANY
+  ```
+  また,文字列をユニコードと指定するために、
+  ```
+  "test" -> u"text"
+  ```
+  とする。
