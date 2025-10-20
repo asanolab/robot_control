@@ -22,6 +22,12 @@ corba通信のためにomniORBとomniORBpyが必要
   - sourceforgeから,直接omniORB-4.2.4とomniORBpy-4.2.4をダウンロードしてbuildしてもよい.
     - https://sourceforge.net/projects/omniorb/files/omniORB
     - https://sourceforge.net/projects/omniorb/files/omniORBpy
+   
+  - pathを.bashrcに追加
+  ```
+  export PYTHONPATH=/usr/local/lib/python3.8/site-packages:$PYTHONPATH
+  ```
+
 
 - python2
   - omniorbはaptでインストール出来る
