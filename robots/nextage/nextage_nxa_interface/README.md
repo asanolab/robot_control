@@ -11,8 +11,12 @@
   - omniORB-4.2.4
   - omniORBpy-4.2.4
 
-## Build
-corba通信のためにomniORBとomniORBpyが必要  
+## Install & Build
+corba通信のためにomniORBとomniORBpyが必要
+- Install
+```
+sudo apt install libomniorb4-dev omniorb-idl omniidl build-essential
+```
 
 - python3
   - build
