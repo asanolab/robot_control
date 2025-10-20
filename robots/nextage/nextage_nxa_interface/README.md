@@ -14,15 +14,15 @@
 corba通信のためにomniORBとomniORBpyが必要  
 
 - python3
-  - buildスクリプトを実行する. 
-  ```
-  cd install
-  sudo ./build.sh
-  ```
-  - sourceforgeから,直接omniORB-4.2.4とomniORBpy-4.2.4をダウンロードしてbuildしてもよい.
-    - https://sourceforge.net/projects/omniorb/files/omniORB
-    - https://sourceforge.net/projects/omniorb/files/omniORBpy
-   
+  - build
+    1. buildスクリプトを実行する. 
+    ```
+    cd install
+    sudo ./build.sh
+    ```
+    2. sourceforgeから,直接omniORB-4.2.4とomniORBpy-4.2.4をダウンロードしてbuildしてもよい.
+      - https://sourceforge.net/projects/omniorb/files/omniORB
+      - https://sourceforge.net/projects/omniorb/files/omniORBpy
   - pathを.bashrcに追加
   ```
   export PYTHONPATH=/usr/local/lib/python3.8/site-packages:$PYTHONPATH
