@@ -8,7 +8,8 @@
 - 動作確認
   - ubuntu20.04
   - python3.8
-  - omniORBpy4.2.4
+  - omniORB-4.2.4
+  - omniORBpy-4.2.4
 
 ## Build
 corba通信のためにomniORBとomniORBpyが必要  
