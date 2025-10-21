@@ -1,3 +1,4 @@
 *.tar.bz2
 omniORB-4.2.4
 omniORBpy-4.2.4
+api/*
