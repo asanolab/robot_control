@@ -1,9 +1,11 @@
 # nextage_nxa_interface
-
-# Setup
 ## Memo
-- python3が推奨(3.8, 3.10). omniORBpyのbuildが必要になる
-- pytyon2だと、ユニコード問題や今後の環境構築の制約になりうるので.
+- NEXTAGE(NXA)は、産業版（研究開発用のオープン版ではない）。カワダ製ソフトウェアによる制御。
+- APIによって自前開発のソフトウェアとの連携が可能。
+  - APIはカワダより取得する。
+- 外部PCとの通信は、corba通信。そのためomniORBとomniORBpyが必要。
+  - python3が推奨(3.8, 3.10). omniORBpyのbuildが必要になる
+  - pytyon2だと、ユニコード問題や今後の環境構築の制約になりうるので.
 
 - 動作確認
   - ubuntu20.04
@@ -12,7 +14,6 @@
   - omniORBpy-4.2.4
 
 ## Install & Build
-corba通信のためにomniORBとomniORBpyが必要
 - Install
 ```
 sudo apt install libomniorb4-dev omniorb-idl omniidl build-essential
@@ -32,7 +33,6 @@ sudo apt install libomniorb4-dev omniorb-idl omniidl build-essential
   ```
   export PYTHONPATH=/usr/local/lib/python3.8/site-packages:$PYTHONPATH
   export PYTHONPATH=/PATH_to_API/NxApiSdk/python/lib/NxApiLib/idl_NxApi:$PYTHONPATH
-
   ```
 
 - python2
