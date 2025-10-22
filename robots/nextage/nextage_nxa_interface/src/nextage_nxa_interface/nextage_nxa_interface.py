@@ -17,7 +17,7 @@ from NxApi import *
 # - sample_disassemble_counter
 
 
-class NextageInterface():
+class NextageNXAInterface():
     def __init__(self, nx_ip="192.168.0.10", debug=True):
         self.ipaddr_str = nx_ip
         self.argv = ["-ORBdefaultWCharCodeSet", "UTF-16", "-ORBgiopMaxMsgSize", "104857600"]
@@ -84,7 +84,7 @@ class NextageInterface():
 
 if __name__ == "__main__":
     ip="192.168.0.23"
-    nx_if = NextageInterface(nx_ip=ip, debug=True)
+    nx_if = NextageNXAInterface(nx_ip=ip, debug=True)
     nx_if.get_variable("nextage_status")
     nx_if.get_variable("tma_status")
     nx_if.get_variable("sample_set_counter")
