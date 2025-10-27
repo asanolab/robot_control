@@ -13,7 +13,8 @@
   - omniORB-4.2.4
   - omniORBpy-4.2.4
 
-## Install & Build
+## Setup
+### Install & Build
 - Install
 ```
 sudo apt install libomniorb4-dev omniorb-idl omniidl build-essential
@@ -42,7 +43,16 @@ sudo apt install libomniorb4-dev omniorb-idl omniidl build-essential
   sudo apt install python-omniorb
   ```
 
-## バージョンによる注意点
+### NEXTAGE PC(windows)の設定
+- Firewallの設定
+  - 「コントロールパネル」から「Windowsファイアウォール」->「Windows ファイアウォールを介したアプリまたは機能を許可」
+  - 「NxProduction ...」の行の「プライベートネットワーク」の行のチェックボックスをONにする。
+  - 再起動
+
+
+
+## 実装上のメモ
+### バージョンによる注意点
 - python3.8の場合  
 anyは、omniORBからimport (API manualに記載)
   ```
