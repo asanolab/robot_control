@@ -6,6 +6,7 @@
 - 外部PCとの通信は、corba通信。そのためomniORBとomniORBpyが必要。
   - python3が推奨(3.8, 3.10). omniORBpyのbuildが必要になる
   - pytyon2だと、ユニコード問題や今後の環境構築の制約になりうるので.
+  - NEXTAGE PC(Windows)でFirewallの設定が必要。
 
 - 動作確認
   - ubuntu20.04
