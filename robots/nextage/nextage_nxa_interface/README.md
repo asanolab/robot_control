@@ -79,7 +79,13 @@ anyはomniORBからimportする
   ```
 
 ## トラブルシューティング
-- 通信できない
+- NEXTAGEと通信できない
+  ```
+  root_controller = api._narrow(RootNxController)
+  File "/usr/local/lib/python3.8/site-packages/omniORB/CORBA.py", line 583, in _narrow
+  return self._obj.narrow(repoId, 1)
+  omniORB.CORBA.TRANSIENT: CORBA.TRANSIENT(omniORB.TRANSIENT_ConnectFailed, CORBA.COMPLETED_NO)
+  ```
   - ファイアウォール設定を確認
 
 - controller.Execute(u"GetAuthority", ANY.to_any(None)) で止まる
