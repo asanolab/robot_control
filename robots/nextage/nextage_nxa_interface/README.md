@@ -75,5 +75,16 @@ anyはomniORBからimportする
   また,文字列をユニコードと指定するために、
   ```
   "test" -> u"text"
-  ```
   とする。
+  ```
+
+## トラブルシューティング
+- 通信できない
+  - ファイアウォール設定を確認
+
+- controller.Execute(u"GetAuthority", ANY.to_any(None)) で止まる
+  ```
+  return self._obj.invoke("Execute", _0_NxApi.NxObject._d_Execute, args)
+  omniORB.CORBA.NO_PERMISSION: CORBA.NO_PERMISSION(0x0, CORBA.COMPLETED_YES)
+  ```
+  - APIサーバが外部通信モードか確認. External control mode deactivated (黄緑)だとNG. クリックして, External control mode activated (黄色) に変更
