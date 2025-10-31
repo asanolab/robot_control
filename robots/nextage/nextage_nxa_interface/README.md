@@ -78,6 +78,11 @@ anyはomniORBからimportする
   とする。
   ```
 
+## 本体操作
+- 復帰方法
+  - 肩LEDが黄色 -> 「Release Pose」をクリック -> 肩LEDが緑になる
+  - 
+
 ## トラブルシューティング
 - NEXTAGEと通信できない
   ```
