@@ -19,6 +19,7 @@ class NextageNXAInterface():
         self.task = None
         self.skt = None
         self.port = 5000
+        self.speed = 100
         self.debug = debug
 
 
@@ -36,21 +37,22 @@ class NextageNXAInterface():
         self.task = self.controller.GetNxObject(u"Task", u"")
         self.varlist= ANY.from_any(self.task.GetVariableNames(u"@GLOBAL_VARS"))
 
-        # print
-        print("Task Name: '%s'"%(self.task.Name))
-        if self.debug:
-            print("varlist: '%s'"%(self.varlist))
-
-        #speed_var = controller.GetVariable(u"@SPEED", u"")
-        #speed = ANY.to_any([["value", speed]])
-        #speed_var.Execute(u"SetValues", ANY.to_any([speed]))
-
         # socket
         self.skt = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.skt.connect((self.ipaddr_str, self.port))
 
         # Get authority
         self.get_authority()
+
+        # Set speed (SetValues must be done after getting authority)
+        speed_var = self.controller.GetVariable(u"@SPEED", u"")
+        self.speed = ANY.to_any([["value", speed]])
+        speed_var.Execute(u"SetValues", ANY.to_any([self.speed]))
+
+        # print
+        print("Task Name: '%s'"%(self.task.Name))
+        if self.debug:
+            print("varlist: '%s'"%(self.varlist))
 
         return
 
