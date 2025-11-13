@@ -5,9 +5,12 @@
 # - authority is needed for write by changing display line to yellow (read is not need)
 # - u'' is not necessary in python3 (python2 needs)
 
+# todo
+# - Var classをnx_interfaceに統合
+
 import socket
 
-## NEXTAGE
+# NEXTAGE API
 from omniORB import CORBA, any as ANY
 from NxApi import *
 
@@ -99,8 +102,8 @@ class NextageNXAInterface():
         self.controller.Execute("ReleaseAuthority", ANY.to_any(None))
 
 
-    # variables
-    def write_var(self, var, val):
+    # set/get variables
+    def set_var_socket(self, var, val):
         msg = str(var)+":"+str(val)
         self.skt.send(msg.encode("utf-8"))
         print(f"sent '{msg}'")
