@@ -5,35 +5,11 @@
 # - authority is needed for write by changing display line to yellow (read is not need)
 # - u'' is not necessary in python3 (python2 needs)
 
-# todo
-# - Var classをnx_interfaceに統合
-
 import socket
 
 # NEXTAGE API
 from omniORB import CORBA, any as ANY
 from NxApi import *
-
-
-class Var:
-    def __init__(self, name):
-        self.name = name  # string
-        self.obj = None
-        return
-
-    def Connect(self, task):
-        self.obj = task.GetVariable(u"@GLOBAL_VARS/"+self.name, u"")
-        return
-
-    def Get(self):
-        val = ANY.from_any(self.obj.Execute(u"GetValues", ANY.to_any(None)))[0]
-        return val
-
-    def Set(self, val):
-        self.obj.Execute(u"SetValues",
-                         ANY.to_any([[[u"value", unicode(str(val))]]]))
-        return
-    pass
 
 
 class NextageNXAInterface():
@@ -103,6 +79,28 @@ class NextageNXAInterface():
 
 
     # set/get variables
+    def get_var(self, var_name='v_name'):
+        s = "@GLOBAL_VARS/" + var_name
+        tv_name = self.task.GetVariable(s, "")  # task_var_name
+        val = ANY.from_any(tv_name.Execute("GetValues", ANY.to_any(None)))[0]
+
+        # print
+        if self.debug:
+            print('%s: %s'%(var_name, val))
+
+        return val
+
+
+    def set_var(self, var_name='v_name', val='write_0'):
+        s = "@GLOBAL_VARS/" + var_name
+        tv_name = self.task.GetVariable(s, "")
+        tv_name.Execute("SetValues", ANY.to_any([[["value", unicode(str(val))]]]))
+
+        # print
+        if self.debug:
+            self.get_var(var_name)  # check
+
+
     def set_var_socket(self, var, val):
         msg = str(var)+":"+str(val)
         self.skt.send(msg.encode("utf-8"))
@@ -110,35 +108,8 @@ class NextageNXAInterface():
         return
 
 
-    def get_variable(self, variable_name='v_name'):
-        s = "@GLOBAL_VARS/" + variable_name
-        tv_name = self.task.GetVariable(s, "")  # task_variable_name
-        value = ANY.from_any(tv_name.Execute("GetValues", ANY.to_any(None)))[0]
-
-        # print
-        if self.debug:
-            print('%s: %s'%(variable_name, value))
-
-        return value
-
-
-    def set_variable(self, variable_name='v_name', variable_value='write_0'):
-        self.get_authority()
-
-        s = "@GLOBAL_VARS/" + variable_name
-        tv_name = self.task.GetVariable(s, "")
-        tv_name.Execute("SetValues", ANY.to_any([[["value", variable_value]]]))
-
-        # print
-        if self.debug:
-            self.get_variable(variable_name)  # check
-
-        self.release_authority()
-
-
-
 if __name__ == "__main__":
     nx_ip="192.168.0.23"
     nx_if = NextageNXAInterface(ip=nx_ip, debug=True)
     nx_if.setup()
-    nx_if.get_variable("nextage_status")
+    nx_if.get_var("nextage_status")
