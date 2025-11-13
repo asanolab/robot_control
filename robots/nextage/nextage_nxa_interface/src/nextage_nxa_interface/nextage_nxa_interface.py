@@ -22,7 +22,7 @@ class NextageNXAInterface():
         self.debug = debug
 
 
-    def setup(self, speed=100, target_task_name='task1'):
+    def setup(self, speed=100):
         # Connect to the API server
         self.orb = CORBA.ORB_init(self.argv, CORBA.ORB_ID)
         self.api = self.orb.string_to_object("corbaloc:iiop:1.2@%s:2809/RootControllerApi"%(self.ipaddr_str))
@@ -41,11 +41,6 @@ class NextageNXAInterface():
         if self.debug:
             print("varlist: '%s'"%(self.varlist))
 
-        if (self.task.Name != target_task_name):
-            self.task.Execute(u"SetTask", ANY.to_any([[u"taskName", target_task_name]]))
-            print("Task has changed: '%s'"%(self.task.Name))
-            pass
-
         #speed_var = controller.GetVariable(u"@SPEED", u"")
         #speed = ANY.to_any([["value", speed]])
         #speed_var.Execute(u"SetValues", ANY.to_any([speed]))
@@ -60,8 +55,11 @@ class NextageNXAInterface():
         return
 
 
-    def servo_on(self):
-        self.whole_body.Execute(u"ServoOn", ANY.to_any(None))
+    def set_task(self, target_task_name='task1'):
+        if (self.task.Name != target_task_name):
+            self.task.Execute(u"SetTask", ANY.to_any([[u"taskName", target_task_name]]))
+            print("Task has changed: '%s'"%(self.task.Name))
+            pass
 
 
     def start_task(self):
@@ -76,6 +74,10 @@ class NextageNXAInterface():
     # Release API authority
     def release_authority(self):
         self.controller.Execute("ReleaseAuthority", ANY.to_any(None))
+
+
+    def servo_on(self):
+        self.whole_body.Execute(u"ServoOn", ANY.to_any(None))
 
 
     # set/get variables
