@@ -1,19 +1,10 @@
 # robot_control
 
 ## Install & Build
-Install ROS
-- melodic
-  - https://wiki.ros.org/melodic/Installation/Ubuntu
-- noetic
-  - https://wiki.ros.org/noetic/Installation/Ubuntu 
-
-Workspace setup
-```
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-wstool init .
-catkin build
-```
+- Install ROS
+  - https://github.com/asanolab/handbook/tree/main/install_doc/ROS  
+- Workspace setup
+  - https://github.com/asanolab/handbook/blob/main/install_doc/workspace.md  
 
 Clone the repository and install dependencies
 ```
