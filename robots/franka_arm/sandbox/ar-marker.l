@@ -38,10 +38,10 @@
 ;; plate cutter
 (setq *ar-marker-5* (make-cube 45 45 2 :name "/ar_marker_5"))
 (send *ar-marker-5* :set-color :yellow)
-;; polymer cup
+;; cup
 (setq *ar-marker-6* (make-cube 45 45 2 :name "/ar_marker_6"))
 (send *ar-marker-6* :set-color :yellow)
-;; polymer cup2
+;; cup2
 (setq *ar-marker-7* (make-cube 45 45 2 :name "/ar_marker_7"))
 (send *ar-marker-7* :set-color :yellow)
 ;; fork
