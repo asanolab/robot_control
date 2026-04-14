@@ -1,10 +1,10 @@
 <package format="2">
   <name>franka_arm</name>
-  <version>1.1.0</version>
+  <version>0.1.0</version>
   <description> franka_arm interface </description>
 
-  <maintainer email="yasano@g.ecc.u-tokyo.ac.jp">Yuki Asano</maintainer>
-  <author email="yasano@g.ecc.u-tokyo.ac.jp">Yuki Asano</author>
+  <maintainer email="yuki.asano3206@gmail.com">Yuki Asano</maintainer>
+  <author email="yuki.asano3206@gmail.com">Yuki Asano</author>
 
   <license>MIT</license>
 
@@ -17,11 +17,15 @@
   <depend>franka_control</depend>
   <depend>franka_description</depend>
   <depend>franka_gripper</depend>
+  <depend>franka_hw</depend>
   <depend>franka_msgs</depend>
+  <depend>franka_visualization</depend>
 
   <depend>euscollada</depend>
   <depend>jsk_panda_startup</depend>
   <depend>panda_eus</depend>
   <depend>pr2eus</depend>
+
+  <depend>robot_control</depend>
 
 </package>

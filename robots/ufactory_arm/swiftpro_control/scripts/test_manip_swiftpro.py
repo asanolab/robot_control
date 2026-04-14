@@ -4,36 +4,36 @@
 import rospy
 import math
 
-from lite6_interface.lite6_interface import Lite6Interface
+from swiftpro_control.swiftpro_interface import SwiftproInterface
 
 
 def main():
-    rospy.init_node("test_manip_lite6", anonymous=True)
-    ri = Lite6Interface("lite6")
+    rospy.init_node("test_manip_swiftpro", anonymous=True)
+    ri = SwiftproInterface("arm")
 
     # Initial Pose
     rospy.loginfo("Moving to Initial Pose")
-    ri.fk([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+    ri.fk([0.0, 0.0, 0.0, 0.0])
 
     # Pose 1
     rospy.loginfo("Moving to Pose 1")
-    ri.fk([40.0, -20.0, 40.0, -20.0, 40.0, -20.0])
+    ri.fk([40.0, 20.0, 10.0, 10.0])
 
     # Pose 2
     rospy.loginfo("Moving to Pose 2")
-    ri.fk_relative([10.0, 10.0, 10.0, 10.0, 10.0, 10.0])
+    ri.ik_relative([0.0, 0.0, -0.05, 0.0, 0.0, 0.0])
 
     # Pose 3
     rospy.loginfo("Moving to Pose 3")
-    ri.ik_relative([0.0, 0.0, -0.05, 0.0, 0.0, 0.0])
+    ri.fk([-40.0, 0.0, 0.0, 0.0])
 
     # Pose 4
     rospy.loginfo("Moving to Pose 4")
-    #ri.ik([0.0, 0.0, -0.05, 0.0, 0.0, 0.0])
+    ri.ik_relative([0.0, 0.0, 0.05, 0.0, 0.0, 0.0])
 
     # Back to Initial Pose
     rospy.loginfo("Moving to Initial Pose again")
-    ri.fk([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+    ri.fk([0.0, 0.0, 0.0, 0.0])
 
 
     rospy.loginfo("End")

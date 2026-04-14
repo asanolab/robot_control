@@ -1,6 +1,6 @@
 <package format="2">
   <name>robot_control</name>
-  <version>1.1.0</version>
+  <version>0.1.0</version>
   <description> robot control </description>
 
   <maintainer email="yasano@g.ecc.u-tokyo.ac.jp">Yuki Asano</maintainer>
@@ -18,10 +18,5 @@
   <depend>ros_controllers</depend>
   <!-- common -->
   <depend>robot_interface</depend>
-  <!-- robots -->
-  <depend>dobot_magician</depend>
-  <depend>franka_arm</depend>
-  <depend>open_manipulator_x</depend>
-  <depend>ufactory_arm</depend>
 
 </package>

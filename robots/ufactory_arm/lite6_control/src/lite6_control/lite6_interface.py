@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-
-from xarm_msgs.srv import Move
+from xarm_msgs.srv import Move,SetInt16
 
 from robot_interface.robot_interface import RobotInterface,deg2rad,rad2deg
 
@@ -16,10 +15,11 @@ class Lite6Interface(RobotInterface):
         self.ip_time = 1       # [s]
 
 
+    # overwrite
     def move_real_robot(self):
-        rospy.wait_for_service('/ufactory/move_joint')
+        rospy.wait_for_service('/lite6/move_joint')
         try:
-            move_joint = rospy.ServiceProxy('/ufactory/move_joint', Move)
+            move_joint = rospy.ServiceProxy('/lite6/move_joint', Move)
             res = move_joint(self.target_angle, self.max_speed, self.max_acc, 0, 0)
             '''
             args (xarm_msgs/srv/Move.srv):
@@ -36,3 +36,21 @@ class Lite6Interface(RobotInterface):
             rospy.sleep(self.ip_time)  # need to change to interpolation time
         except rospy.ServiceException as e:
             print('Service call failed: %s' % e)
+
+
+    def gripper_command(self, val):
+        rospy.wait_for_service('/lite6/vacuum_gripper_set')
+        try:
+            s = rospy.ServiceProxy('/lite6/vacuum_gripper_set', SetInt16)
+            res = s(val)
+            rospy.loginfo(res.message)
+        except rospy.ServiceException as e:
+            print("Service call failed: %s"%e)
+
+
+    def gripper_open(self):
+        self.gripper_command(1)
+
+
+    def gripper_close(self):
+        self.gripper_command(0)

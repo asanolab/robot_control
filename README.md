@@ -1,17 +1,19 @@
 # robot_control
 
-## Install
-please install ROS first -> http://wiki.ros.org/melodic/Installation/Ubuntu
+## Install & Build
+- Install ROS
+  - https://github.com/asanolab/handbook/tree/main/install_doc/ROS  
+- Workspace setup
+  - https://github.com/asanolab/handbook/blob/main/install_doc/workspace.md  
 
+Clone the repository and install dependencies
 ```
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
-wstool init .
-
-git clone git@github.com:yuki-asano/robot_control.git
+git clone https://github.com/asanolab/robot_control.git
+rosdep install -y -r --from-paths robot_control --ignore-src
 ```
 
-Set environment variable to .bashrc
+Build
 ```
-export PYTHONPATH=$PYTHONPATH:/home/asano/catkin_ws/src/robot_control/src/robot_interface
+cd robot_control/robot_control
+catkin bt
 ```
