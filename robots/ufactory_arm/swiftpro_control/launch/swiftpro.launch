@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="swiftpro_operator" pkg="swiftpro_control" type="swiftpro_operator_node.py" output="screen">
+  </node>
+  <include file="$(find swiftpro_control)/launch/swiftpro_bringup.launch" />
+  <include file="$(find pro_moveit_config)/launch/demo.launch" />
+</launch>

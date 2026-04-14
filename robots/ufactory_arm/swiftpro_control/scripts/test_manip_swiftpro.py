@@ -4,7 +4,7 @@
 import rospy
 import math
 
-from swiftpro_interface.swiftpro_interface import SwiftproInterface
+from swiftpro_control.swiftpro_interface import SwiftproInterface
 
 
 def main():

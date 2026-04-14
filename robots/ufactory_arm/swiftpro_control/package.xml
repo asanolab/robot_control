@@ -1,5 +1,5 @@
 <package format="2">
-  <name>swiftpro_interface</name>
+  <name>swiftpro_control</name>
   <version>0.1.0</version>
   <description> uArm Swift Pro interface </description>
 
