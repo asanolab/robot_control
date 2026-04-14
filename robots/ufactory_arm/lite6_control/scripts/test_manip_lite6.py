@@ -4,7 +4,7 @@
 import rospy
 import math
 
-from lite6_interface.lite6_interface import Lite6Interface
+from lite6_control.lite6_interface import Lite6Interface
 
 
 def main():
