@@ -1,4 +1,4 @@
-# swiftpro_interface
+# swiftpro_control
 Software for uArm SwiftPro
 ## References
   - API (github)
@@ -10,8 +10,8 @@ Software for uArm SwiftPro
   - https://github.com/asanolab/robot_control
 - Workspace setup and build
 ```bash
-cd swiftpro_interface
-wstool merge -t ~/catkin_ws/src/ install/swiftpro_interface.noetic.rosinstall 
+cd swiftpro_control
+wstool merge -t ~/catkin_ws/src/ install/swiftpro_control.noetic.rosinstall 
 wstool update
 rosdep install -y -r --from-paths . --ignore-src
 
@@ -33,7 +33,7 @@ catkin bt
 ## Visualization (Rviz)
 - Just see the robot in Rviz
 ```
-roslaunch swiftpro_interface swiftpro_display.launch
+roslaunch swiftpro_control swiftpro_display.launch
 ```
 ![swiftpro_rviz](https://github.com/asanolab/robot_control/assets/6872136/b7330b9b-67e6-4da3-8f43-22b92f66f00f)
 
@@ -41,8 +41,8 @@ roslaunch swiftpro_interface swiftpro_display.launch
 ## Manipulation (moveit)
 ### Test motion through script program
 ```
-roslaunch swiftpro_interface swiftpro_moveit_manip.launch
-rosrun swiftpro_interface test_manip_swiftpro.py
+roslaunch swiftpro_control swiftpro_moveit_manip.launch
+rosrun swiftpro_control test_manip_swiftpro.py
 ```
 ![swiftpro_moveit](https://github.com/asanolab/robot_control/assets/6872136/b9810777-de69-430a-a857-f341f8551f21)
 
@@ -55,7 +55,7 @@ roslaunch pro_moveit_config demo.launch
 
 ## Pump
 ```
-roslaunch swiftpro_interface swiftpro_bringup.launch
+roslaunch swiftpro_control swiftpro_bringup.launch
 
 cd scripts
 ./test_pump_on.py   # pump on
