@@ -1,0 +1,13 @@
+<package format="2">
+  <name>realsense_utils</name>
+  <version>0.1.0</version>
+  <description> realsense </description>
+
+  <maintainer email="yuki.asano3206@gmail.com">Yuki Asano</maintainer>
+  <author email="yuki.asano3206@gmail.com">Yuki Asano</author>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
