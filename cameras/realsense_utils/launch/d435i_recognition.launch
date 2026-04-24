@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <arg name="only_camera" default="false"/>  <!-- this means display only caemra model without robot -->
+
+  <!-- D435i -->
+  <include file="$(find realsense_utils)/launch/rs_d435_camera_without_model.launch">
+    <arg name="serial_no"         value="032622071432" />
+    <arg name="camera"            value="camera1" />
+    <arg name="enable_gyro"       value="false" />
+    <arg name="enable_accel"      value="false" />
+    <arg name="enable_pointcloud" value="true" />
+  </include>
+
+  <!-- ar_marker -->
+  <arg name="marker_size" default="4.5" />
+  <arg name="max_new_marker_error" default="0.08" />
+  <arg name="max_track_error" default="0.2" />
+  <arg name="cam_image_topic" default="/camera1/color/image_raw" />
+  <arg name="cam_info_topic" default="/camera1/color/camera_info" />
+  <arg name="output_frame" default="/camera1_color_optical_frame" />
+
+  <node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen"
+    args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame)" />
+
+
+  <group if="$(arg only_camera)" >
+    <!-- Loads the camera model -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find realsense2_description)/urdf/test_d435_camera.urdf.xacro' use_nominal_extrinsics:=false"/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find realsense_utils)/config/d435i_recognition_only_camera.rviz" />
+  </group>
+  
+</launch>
