@@ -60,6 +60,12 @@ export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib/NxApiLib/idl_NxAp
   - 「NxProduction ...」の行の「プライベートネットワーク」の行のチェックボックスをONにする。
   - 再起動
 
+### サンプルプログラム
+以下を実行して、何かしら値が返ってくれば、通信は成功している.NEXTAGE側で定義されている変数によって,エラーが生じることもある.
+```
+cd scripts
+./sample_variable_python3.py
+```
 
 
 ## 実装上のメモ
