@@ -39,18 +39,20 @@ robot_control/robots/nextage/nextage_nxa_interface/api/NxApiSdk
     2. sourceforgeから,直接omniORB-4.2.4とomniORBpy-4.2.4をダウンロードしてbuildしてもよい.
       - https://sourceforge.net/projects/omniorb/files/omniORB
       - https://sourceforge.net/projects/omniorb/files/omniORBpy
-  - pathを.bashrcに追加
-  ```
-  export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.8/site-packages  # for omniORBpy
-  export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib
-  export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib/NxApiLib/idl_NxApi
-  ```
 
 - python2
   - omniorbはaptでインストール出来る
   ```
   sudo apt install python-omniorb
   ```
+
+### 環境変数
+- pathを.bashrcに追加
+```
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.8/site-packages  # for omniORBpy
+export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib
+export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib/NxApiLib/idl_NxApi
+```
 
 ### NEXTAGE PC(windows)の設定
 - Firewallの設定
