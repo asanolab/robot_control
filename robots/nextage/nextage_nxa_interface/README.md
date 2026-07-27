@@ -50,8 +50,8 @@ robot_control/robots/nextage/nextage_nxa_interface/api/NxApiSdk
 - pathを.bashrcに追加
 ```
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3.8/site-packages  # for omniORBpy
-export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib
-export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib/NxApiLib/idl_NxApi
+export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib  # for API
+export PYTHONPATH=$PYTHONPATH:/PATH_to_API/NxApiSdk/python/lib/NxApiLib/idl_NxApi  # for API
 ```
 
 ### NEXTAGE PC(windows)の設定
