@@ -21,6 +21,13 @@
 sudo apt install libomniorb4-dev omniorb-idl omniidl build-essential
 ```
 
+### API
+- カワダよりAPIを取得する。NxApiSdk.zip
+- 解凍し以下に置く
+```
+robot_control/robots/nextage/nextage_nxa_interface/api/NxApiSdk
+```
+
 ### CORBA通信のセットアップ
 - python3
   - build
