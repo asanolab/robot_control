@@ -21,6 +21,7 @@
 sudo apt install libomniorb4-dev omniorb-idl omniidl build-essential
 ```
 
+### CORBA通信のセットアップ
 - python3
   - build
     1. buildスクリプトを実行する. 
