@@ -6,7 +6,9 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   )
-find_package(panda_eus)
+
+# panda_eus model directory
+find_package(panda_eus REQUIRED)
 
 catkin_package(
   CATKIN_DEPENDS roscpp rospy std_msgs
