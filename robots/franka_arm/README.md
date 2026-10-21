@@ -1,12 +1,3 @@
-# panda
-
-## robot model
-![panda_rviz_wide](https://github.com/asanolab/robot_control/assets/6872136/aaadd6e9-3a1e-4244-8c4f-17610334c5e8)
-
-![panda_pedestal_rviz_wide](https://github.com/asanolab/robot_control/assets/6872136/19f10748-4d8c-4dda-ba2f-b43f4bf42e8f)
-
----
-
 # Franka Research 3 (FR3) セットアップ
 
 > 対象: Ubuntu 20.04.6 LTS / ROS Noetic / FR3 System Image 5.3.0  
@@ -34,7 +25,7 @@
 sudo apt install python3-vcstool
 
 cd catkin_ws
-vcs import src < src/catkin_ws/src/robot_control/franka_arm/repositories/franka_arm.repos
+vcs import src < src/robot_control/robots/franka_arm/repositories/franka_arm.repos 
 rosdep install -y -r --from-paths src --ignore-src
   # pr2_teleop_general in jsk_pr2_startup is obsolete
 ```
@@ -58,3 +49,10 @@ cd src/robot_control/franka_arm
 catkin bt
 source ~/catkin_ws/devel/setup.bash
 ```
+
+# panda
+
+## robot model
+![panda_rviz_wide](https://github.com/asanolab/robot_control/assets/6872136/aaadd6e9-3a1e-4244-8c4f-17610334c5e8)
+
+![panda_pedestal_rviz_wide](https://github.com/asanolab/robot_control/assets/6872136/19f10748-4d8c-4dda-ba2f-b43f4bf42e8f)
