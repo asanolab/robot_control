@@ -1,3 +1,59 @@
+# Franka Research 3 (FR3) セットアップ
+
+> 対象: Ubuntu 20.04.6 LTS / ROS Noetic / FR3 System Image 5.3.0  
+> 状態: セットアップ手順案（実機での動作検証は未実施）  
+> 注: このフォルダには従来の Panda 関連ファイルもあるため、既存の Panda 用設定を FR3 用と混同しないこと。
+
+## 1. バージョンと準備
+
+- Ubuntu: 20.04.6 LTS
+- ROS: Noetic (ROS 1)
+- FR3 System Image: 5.3.0
+- libfranka: **0.10.0** を候補として固定
+- franka_ros: **0.10.0** を候補として固定（FR3 対応を含むリリース）
+- FCI (Franka Control Interface) が利用可能であること
+
+**重要:** System Image と libfranka / franka_ros の互換性は必ず公式の互換性表とリリースノートで再確認すること。ROS Noetic はサポート終了済みのため、研究用PCではバージョンを固定して利用する。実機を動かす前に安全領域、非常停止、ブレーキ解除状態を確認する。
+
+参考:
+- [libfranka](https://github.com/frankarobotics/libfranka)
+- [franka_ros](https://github.com/frankarobotics/franka_ros)
+- [Franka Robotics Documentation](https://frankarobotics.github.io/docs/)
+
+## 2. Setup workspace
+```bash
+sudo apt install python3-vcstool
+
+cd catkin_ws
+vcs import src < src/robot_control/robots/franka_arm/repositories/franka_arm.repos 
+rosdep install -y -r --from-paths src --ignore-src
+  # pr2_teleop_general in jsk_pr2_startup is obsolete
+```
+
+## 2. libfranka をビルド
+0.10.0(デフォルト設定)がcloneされていれば、
+```bash
+cd libfranka
+mkdir -p build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF ..
+cmake --build . -j$(nproc)
+```
+
+もしされていなければ、手動でcheckout
+```
+git checkout 0.10.0
+git submodule update --init --recursive
+```
+
+## 3. ros build
+
+```bash
+cd franka_arm
+catkin bt
+source ~/catkin_ws/devel/setup.bash
+```
+
 # panda
 
 ## robot model
