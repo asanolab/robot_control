@@ -29,6 +29,15 @@
 - [franka_ros](https://github.com/frankarobotics/franka_ros)
 - [Franka Robotics Documentation](https://frankarobotics.github.io/docs/)
 
+## 2. Setup workspace
+```bash
+sudo apt install python3-vcstool
+
+cd catkin_ws
+vcs import src < src/catkin_ws/src/robot_control/franka_arm/repositories/franka_arm.repos
+rosdep install -y -r --from-paths src --ignore-src
+  # pr2_teleop_general in jsk_pr2_startup is obsolete
+```
 
 ## 2. libfranka をビルド
 
@@ -42,9 +51,10 @@ cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF ..
 cmake --build . -j$(nproc)
 ```
 
-## 3. franka_ros
+## 3. ros build
 
 ```bash
-cd franka_ros
+cd src/robot_control/franka_arm
 catkin bt
+source ~/catkin_ws/devel/setup.bash
 ```
