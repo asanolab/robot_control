@@ -31,15 +31,19 @@ rosdep install -y -r --from-paths src --ignore-src
 ```
 
 ## 2. libfranka をビルド
-
+0.10.0(デフォルト設定)がcloneされていれば、
 ```bash
 cd libfranka
-git checkout 0.10.0
-git submodule update --init --recursive
 mkdir -p build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF ..
 cmake --build . -j$(nproc)
+```
+
+もしされていなければ、手動でcheckout
+```
+git checkout 0.10.0
+git submodule update --init --recursive
 ```
 
 ## 3. ros build
