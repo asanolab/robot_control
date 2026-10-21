@@ -49,7 +49,7 @@ git submodule update --init --recursive
 ## 3. ros build
 
 ```bash
-cd src/robot_control/franka_arm
+cd franka_arm
 catkin bt
 source ~/catkin_ws/devel/setup.bash
 ```
