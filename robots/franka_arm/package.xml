@@ -20,6 +20,7 @@
   <depend>franka_hw</depend>
   <depend>franka_msgs</depend>
   <depend>franka_visualization</depend>
+  <depend>franka_ros</depend>
 
   <depend>euscollada</depend>
   <depend>jsk_panda_startup</depend>

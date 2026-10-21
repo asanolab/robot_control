@@ -1,0 +1,35 @@
+repositories:
+  # FR3 requires
+  # - Robot System: >= 5.2.0
+  # - libfranka:    >= 0.10.0
+  # - franka_ros:   >= 0.10.0
+  # See. https://frankaemika.github.io/docs/compatibility.html
+  franka_ros:
+    type: git
+    url: git@github.com:frankaemika/franka_ros.git
+    version: 0.10.0
+  libfranka:
+    type: git
+    url: git@github.com:frankaemika/libfranka.git
+    version: 0.10.0
+  #
+  # for euslisp
+  jsk-ros-pkg/jsk_robot:
+    type: git
+    url: git@github.com:yuki-asano/jsk_robot.git
+    version: fr3-devel
+  #
+  # pr2eus
+  # pr2eus deb for noetic is not ready yet (2023.5.12)
+  jsk-ros-pkg/jsk_pr2eus:
+    type: git
+    url: git@github.com:jsk-ros-pkg/jsk_pr2eus.git
+  #
+  # for collada(.dae) import
+  # - for Ubuntu 20.04 (assimp v5.1 is not available with deb)
+  # - v5.1 (or above) is necessary to avoid bug in v5.0
+  # - https://github.com/assimp/assimp/issues/4213
+  assimp:
+    type: git
+    url: git@github.com:assimp/assimp.git
+    version: v5.1.0
