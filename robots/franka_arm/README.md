@@ -1,11 +1,15 @@
-# Franka Research 3 (FR3) セットアップ
+# Franka Robotのセットアップ
 
+## Before start
+- マシンの時刻同期
+  - https://github.com/asanolab/robot_control/wiki/%E6%99%82%E5%88%BB%E5%90%8C%E6%9C%9F
+
+## FR3のセットアップ
 > 対象: Ubuntu 20.04.6 LTS / ROS Noetic / FR3 System Image 5.3.0  
 > 状態: セットアップ手順案（実機での動作検証は未実施）  
 > 注: このフォルダには従来の Panda 関連ファイルもあるため、既存の Panda 用設定を FR3 用と混同しないこと。
 
-## 1. バージョンと準備
-
+### バージョンと準備
 - Ubuntu: 20.04.6 LTS
 - ROS: Noetic (ROS 1)
 - FR3 System Image: 5.3.0
@@ -20,7 +24,7 @@
 - [franka_ros](https://github.com/frankarobotics/franka_ros)
 - [Franka Robotics Documentation](https://frankarobotics.github.io/docs/)
 
-## 2. Setup workspace
+### Setup workspace
 ```bash
 sudo apt install python3-vcstool
 
@@ -30,7 +34,7 @@ rosdep install -y -r --from-paths src --ignore-src
   # pr2_teleop_general in jsk_pr2_startup is obsolete
 ```
 
-## 2. libfranka をビルド
+### libfranka をビルド
 0.10.0(デフォルト設定)がcloneされていれば、
 ```bash
 cd libfranka
@@ -46,7 +50,7 @@ git checkout 0.10.0
 git submodule update --init --recursive
 ```
 
-## 3. ros build
+### ros build
 
 ```bash
 cd franka_arm
